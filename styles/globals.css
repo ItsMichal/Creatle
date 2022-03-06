@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        @apply bg-gradient-to-tr;
+        @apply from-black;
+        @apply to-gray-900;
+        @apply w-screen;
+        @apply min-h-screen;
+        @apply overflow-x-hidden;
+    }
+
+    .grad {
+        @apply bg-gradient-to-tl;
+        @apply from-cyan-500;
+        @apply to-blue-500;
+        @apply text-transparent;
+        @apply bg-clip-text;
+    }
+}

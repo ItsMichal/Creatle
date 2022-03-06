@@ -1,3 +1,8 @@
+import dynamic from 'next/dynamic';
+
+const ParticlesBg = dynamic(() => import('particles-bg'), {
+  ssr: false,
+});
 import React, { ReactNode } from "react";
 import Header from "./Header";
 
@@ -8,42 +13,8 @@ type Props = {
 const Layout: React.FC<Props> = (props) => (
   <div>
     <Header />
-    <div className="layout">{props.children}</div>
-    <style jsx global>{`
-      html {
-        box-sizing: border-box;
-      }
-
-      *,
-      *:before,
-      *:after {
-        box-sizing: inherit;
-      }
-
-      body {
-        margin: 0;
-        padding: 0;
-        font-size: 16px;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-          Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-          "Segoe UI Symbol";
-        background: rgba(0, 0, 0, 0.05);
-      }
-
-      input,
-      textarea {
-        font-size: 16px;
-      }
-
-      button {
-        cursor: pointer;
-      }
-    `}</style>
-    <style jsx>{`
-      .layout {
-        padding: 0 2rem;
-      }
-    `}</style>
+    <div className="bg-gray-900 text-blue-400 rounded-xl p-10 w-4/5 mx-auto">{props.children}</div>
+    <ParticlesBg color="#60A5FA" num={50} type={'cobweb'} bg={true}/>
   </div>
 );
 

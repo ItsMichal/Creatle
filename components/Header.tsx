@@ -1,55 +1,24 @@
 import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import Head from "next/head";
 
 const Header: React.FC = () => {
   const router = useRouter();
   const isActive: (pathname: string) => boolean = (pathname) =>
     router.pathname === pathname;
 
-  let left = (
-    <div className="left">
-      <Link href="/">
-        <a className="bold" data-active={isActive("/")}>
-          Feed
-        </a>
-      </Link>
-      <style jsx>{`
-        .bold {
-          font-weight: bold;
-        }
-
-        a {
-          text-decoration: none;
-          color: #000;
-          display: inline-block;
-        }
-
-        .left a[data-active="true"] {
-          color: gray;
-        }
-
-        a + a {
-          margin-left: 1rem;
-        }
-      `}</style>
-    </div>
-  );
-
-  let right = null;
 
   return (
-    <nav>
-      {left}
-      {right}
-      <style jsx>{`
-        nav {
-          display: flex;
-          padding: 2rem;
-          align-items: center;
-        }
-      `}</style>
-    </nav>
+    <>
+    <Head>
+      <link rel="icon" href="favicon.ico"></link>
+    </Head>
+    <header className="w-full p-10">
+      <h1 className="font-extrabold mx-auto my-5 text-6xl grad w-fit p-2 bg-black rounded-xl text-center">🛠 Creatle<br></br><small className="text-sm font-bold italic">DIY Wordle Game</small></h1>
+      
+    </header>
+    </>
   );
 };
 
