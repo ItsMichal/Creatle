@@ -1,7 +1,16 @@
-import React from "react";
+// import React from "react";
 
-const CreateForm : React.FC<{}> = () => {
-    const onSubmit = (event : React.FormEvent<HTMLFormElement>) => {
-        event.preventDefault();
-    }
-}
+// interface SolutionComponent
+
+// interface BaseFormComponent {
+//     name: string;
+//     description: string;
+//     emoji: string;
+
+// }
+
+// // const CreateForm : React.FC<{}> = () => {
+// //     const onSubmit = (event : React.FormEvent<HTMLFormElement>) => {
+// //         event.preventDefault();
+// //     }
+// // }
