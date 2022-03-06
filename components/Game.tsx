@@ -49,13 +49,14 @@ export const GamePreview: React.FC<{ game : GamePreviewProps}> = ({game}) =>{
             <h3 className="text-3xl font-bold">{game.name} </h3>
             <p className="text-xl font-medium">by {game.User.name}</p>
             <div className="flex flex-row mt-2">
-                <div>
+                <div className="mr-5">
                     <p> {game.description}</p>
                     <p className="text-sm font-light">Today's puzzle is #{pickSolution()} out of {game.solutions.length}</p>
+                    <p className="flex flex-row text-2xl"><div className="pr-2 active:translate-y-1">👍 </div> / <div className="pl-2 active:translate-y-1">👎</div> </p>
                 </div>
                 
                 <Link href={"games/" + game.name}>
-                    <div className="bg-gradient-to-tr from-blue-800 to-blue-500 w-fit p-2 rounded-lg ml-auto text-white">Play {game.name}!</div>
+                    <div className="bg-gradient-to-tr from-blue-800 to-blue-500 w-fit h-fit p-2 rounded-lg ml-auto mt-auto text-white">Play {game.name}!</div>
                 </Link>
             </div>
             

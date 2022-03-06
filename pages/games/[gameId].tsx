@@ -120,7 +120,7 @@ type GamePlayState = {
 
 export const SingleGameInput : React.FC<{val: string, onClick: (val: string) => void}> = ({val, onClick}) => {
     return (
-        <div className="p-2 rounded-md bg-gray-700 text-white flex flex-col" onClick={()=>{onClick(val)}}>
+        <div className="p-2 min-w-fit rounded-md bg-gray-700 text-white flex flex-col" onClick={()=>{onClick(val)}}>
             <div className="flex-grow"></div>
             {val}
             <div className="flex-grow"></div>
@@ -144,7 +144,7 @@ export const GameInput : React.FC<{game: GameConfigProps,
             <div className="p-4 rounded-md bg-red-700 text-white" onClick={onDelete}>⌫</div>
         </div>
         <div className="bg-[#111] rounded-b-xl pt-4 pb-10 text-center" >
-            <div className="p-4 w-1/5 mx-auto rounded-md bg-blue-700 text-white" onClick={onEnter}>
+            <div className="p-4 w-1/5 min-w-fit mx-auto rounded-md bg-blue-700 text-white" onClick={onEnter}>
                 Submit Attempt!
             </div>
         
@@ -329,7 +329,7 @@ export class GamePlay extends React.Component<GameConfigProps, GamePlayState> {
                 <h1 className="text-3xl font-bold">{this.props.name}</h1>
                 <p>Attempt #{this.state.curLine+1} out of {this.state.linesState.length}</p>
                 <p>State - {this.state.won ? "Won" : "Not Won"} - {this.state.gameOver ? "Game Over" : "Game Ongoing"}</p>
-                <p>Solution - {this.state.todaysSolution.map(char => {return char+"/"})}</p>
+                <p>Solution - <a className="bg-black text-black">{this.state.todaysSolution.map(char => {return char+"/"})}</a></p>
                 {this.state.linesState.map((line,idx) => {
                     if(idx <= this.state.curLine){
                         return <>
