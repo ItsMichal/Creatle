@@ -1,16 +1,17 @@
 // import React from "react";
 
-// interface SolutionComponent
+// // interface SolutionComponent
 
-// interface BaseFormComponent {
-//     name: string;
-//     description: string;
-//     emoji: string;
+
+// export const CreateForm : React.FC<{}> = () => {
+//     const onSubmit = (event : React.FormEvent<HTMLFormElement>) => {
+//         event.preventDefault();
+//     }
+
+//     return (
+
+//     )
 
 // }
 
-// // const CreateForm : React.FC<{}> = () => {
-// //     const onSubmit = (event : React.FormEvent<HTMLFormElement>) => {
-// //         event.preventDefault();
-// //     }
-// // }
+export {}
